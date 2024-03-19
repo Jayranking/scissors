@@ -1,0 +1,127 @@
+
+{% include 'snippet.html' %}
+    <div class="container-fluid position-relative bg-dark d-flex p-0">
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar  navbar-light">
+                <a href="/dashboard" class="navbar-brand mx-4 mb-3">
+                    <h5 class="text-primary">Scissors</h5>
+                </a>
+
+                <div class="navbar-nav w-100">
+                    <a href="/dashboard" class="nav-item nav-link mb-2">
+                        <i class="fa fa-tachometer-alt me-2"></i>
+                        Dashboard
+                    </a>
+
+                    <a href="/shorten" class="nav-item nav-link active mb-2">
+                        <i class="uil uil-link me-2"></i>
+                        Shorten URL
+                    </a>
+
+                    <a href="/history" class="nav-item nav-link mb-2">
+                            <i class="uil uil-book me-2"></i>
+                            History
+                    </a>
+
+                    <a href="/logout" class="nav-item nav-link mb-2">
+                        <i class="uil uil-sign-out-alt me-2"></i>
+                        Logout
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0 ">
+
+                <a href="/dashboard" class="navbar-brand d-flex d-lg-none me-4">
+                    <h6 class="text-primary mb-0">Scissors</h6>
+                </a>
+
+                <a href="#" class="sidebar-toggler flex-shrink-0">    
+                    <span><i class="fa fa-bars text-primary"></i></span>
+                </a>
+                
+                <div class="navbar-nav align-items-center mx-auto ">
+                    <div class="d-none d-md-flex">
+                        <div class="exam">
+                            <p>Welcome, you are logged in to Scissors...</p>
+                        </div>
+                    </div>
+        
+                    <div class="nav-item dropdown imagefloat">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                <img class="rounded-circle me-lg-2" src="/static/url/image/user.png" alt="" style="width: 50px; height: 50px;">
+                                <span class="d-none d-lg-inline-flex">Godfrey Ani</span>
+                            </a>
+                            
+                            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                                <a href="/logout" class="dropdown-item">Log Out</a>
+                            </div>
+                        </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="shortner">
+                        <h3 class="fw-bold">Paste URL to shorten </h3>
+
+                        <form action="#" id="urlForm" class="d-flex justify-content-center mt-4 mb-3">
+                            <input type="text" class="form-control" id="longUrl" name="longUrl" placeholder="Enter link here" required>
+                            <button type="submit" class="btn">Shorten URL</button>
+                        </form>
+                        <div id="result" class="text-center">
+                            <!-- Result will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded-top p-4">
+                    <div class="">
+                        <div class=" text-center fw-bold text">
+                            &copy; <a href="/dashboard" class="text-primary">Scissors</a> || All Right Reserved. 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        
+    </div>
+
+    <script>
+        document.getElementById('urlForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const longUrl = document.getElementById('longUrl').value;
+    
+            const response = await fetch('/shorten/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    long_url: longUrl
+                })
+            });
+    
+            const data = await response.json();
+            const shortUrl = window.location.origin + data.short_url;
+    
+            document.getElementById('result').innerHTML = `
+                <h6 class ='fw-bold'>Short URL <a href="${shortUrl}" target="_blank">${shortUrl}</a></h6>
+                <h3>QR Code</h3>
+                <img src="${data.qr_code_path}" alt="QR Code" style="width: 200px; height: 200px;">
+            `;
+        });
+    </script>
+    

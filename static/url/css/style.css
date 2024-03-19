@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+     box-sizing: border-box;
+     font-family: 'Poppins', sans-serif;
+}
+
+@keyframes spin{
+     from{
+          transform: rotate(0deg);
+     }
+     to{
+          transform: rotate(360deg);
+     }
+}
+
+.navbar_section{
+     background: rgb(4,41,75);
+     background: linear-gradient(30deg, rgba(4,41,75,1) 56%, rgba(4,41,75,1) 70%, rgba(4,41,75,1) 100%);
+     padding-bottom: 3rem;
+}
+
+.navbar{
+     background-attachment: fixed;
+     border-bottom: 1px solid rgba(204, 201, 201, 0.637);
+}
+
+.navbar_section .navbar ul li a{
+     color: white;
+     font-weight: bold;
+     font-size: 17px;
+}
+
+.navbar_section .navbar ul li a:hover{
+     color: #e6e5e7;
+}
+
+.navbar-toggler:focus {
+    
+     box-shadow: none !important;
+ }
+
+.navbar span i{
+     color: #5dadf8 !important;
+     font-size: 20px;
+}
+
+@media (max-width: 992px) {
+     .middle{
+          text-align: center !important;
+     }
+     .sublink{
+          justify-content: center;
+     }
+     .sublink a{
+          margin-right: 10px;
+     }
+}
+.home_writeup form input{
+     width: 70%;
+     height: 50px;
+     margin-right: 10px;
+}
+
+.home_writeup form input:focus{
+     box-shadow: none !important;
+}
+
+.home_writeup form input::placeholder{
+     font-weight: 600;
+     font-size: 18px;
+}
+.home_writeup button{
+     background-color: #56a4eed8 ;
+     padding: 10px 30px;
+     color: white;
+}
+.home_writeup button:hover{
+     background-color: #5d8ef8;
+     color: white;
+}
+
+.home_writeup p a{
+     color: white;
+}
+@media (max-width: 767px){
+     .home_writeup .d-flex{
+          display: block !important;
+          text-align: center;
+     }
+     .home_writeup form input{
+          width: 100%;
+          margin-bottom: 15px;
+     }
+}
+.homeBox{
+     background-color: rgba(255, 255, 255, 0.897);
+     border-radius: 5px;
+}
+.boxText .btn{
+     background-color: rgb(4,41,75) ;
+     padding: 10px 30px;
+     color: white;
+}
+.boxText .btn:hover{
+     background-color: rgba(6, 53, 97, 0.897);
+}
+.boxImg img{
+     width: 350px;
+     height: 350px;
+}
+.weDo_section{
+     background-color: rgb(248, 246, 246);
+     padding: 3rem;
+}
+.weDo{
+     max-width: 900px;
+     margin: 30px auto;
+     padding: 20px; text-align: center;
+}
+.weDo h1{
+     text-align: center;
+     color:rgb(4,41,75);
+     font-weight: 600;
+     font-size: 50px;
+}
+.weDo p{
+     text-align: justify;
+     padding-top: 10px;
+}
+
+.weDo p a{
+     text-decoration: none;
+}
+.mycard{
+     background: rgb(8,5,71);
+     background: linear-gradient(30deg, rgba(8,5,71,0.9556197478991597) 77%, rgba(17,6,78,1) 100%, rgba(18,13,80,1) 100%);
+     position: relative;
+     transition: transform 0.3s ease;
+     cursor: pointer;
+}
+.mycard:hover{
+     transform: translateY(-30px); 
+}
+
+.secondCard{
+     background: rgb(4,2,36);
+     background: linear-gradient(30deg, rgba(4,2,36,0.9556197478991597) 80%, rgba(4,2,36,1) 100%, rgba(4,2,36,1) 100%); 
+}
+.thirdCard{
+     background: rgb(4,41,75);
+     background: linear-gradient(30deg, rgba(4,41,75,1) 56%, rgba(4,41,75,1) 70%, rgba(4,41,75,1) 100%);
+}
+.flatIcon img{
+     width: 50px;
+     height: 50px;
+     border: 1px solid white;
+     background-color: white;
+     border-radius: 50%;
+     padding: 10px;
+}
+.flatText p{
+     color: rgba(255, 255, 255, 0.74);
+     /* text-align: justify; */
+     font-weight: 16px;
+}
+.footer{
+     background: rgb(3, 19, 34);
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     padding: 40px;
+     padding-bottom: 20px;
+}
+.footerList ul li{
+     list-style: none;
+     margin-right: 10px;
+}
+.footerList ul li a{
+     text-decoration: none;
+     color: white;
+}
+
+   /* ====Login=== */
+   #loginForm{
+     width: 100%;
+     height: 100vh;
+     background: rgb(4,41,75);
+     background: linear-gradient(30deg, rgba(4,41,75,1) 56%, rgba(4,41,75,1) 70%, rgba(4,41,75,1) 100%);
+   }
+   #registerForm{
+     width: 100%;
+     height: 100vh;
+     background: rgb(4,41,75);
+     background: linear-gradient(30deg, rgba(4,41,75,1) 56%, rgba(4,41,75,1) 70%, rgba(4,41,75,1) 100%);
+   }
+   #form{
+     margin-top: 150px;
+     padding: 20px;
+     background: white;
+     border-radius: 10px;
+   }
+   #registerForm form{
+     margin-top: 30px;
+   }
+   #form h3::before{
+     content: '';
+     display: block;
+     width: 30px;
+     height: 3px;
+     background-color: rgb(4,41,75);
+     position: absolute; 
+    bottom: 0;
+   }
+
+   #registerForm form h3::before{
+     width: 35px;
+   }
+   #form .form-floating input:focus{
+          box-shadow: none;
+          border-color: rgb(4,41,75);
+   }
+   #form a{
+     text-decoration: none;
+     color: rgb(4,41,75);
+   }
+
+   #form a:hover{
+     color: rgb(4, 87, 165);
+   }
+   #form button{
+     background: rgb(4,41,75);
+     width: 100%;
+     color: white;
+     font-weight: bold;
+   }
+   #form button:hover{
+     background-color: rgb(4, 87, 165);
+   }
